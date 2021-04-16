@@ -57,12 +57,16 @@ dotnet new auth0mvc [options]
 
 This will create a new MVC application in the current folder. The following template-specific options are available:
 
-Option | Description |
----------|----------|----------
-`-d` or `--domain` | The Auth0 domain associated with your tenant. The default value is `{DOMAIN}`. |
-`-c` or `--clientId` | The client id associated with your application. The default value is `{CLIENT_ID}`. |
-`-cl` or `--clientSecret` | The secret associated with your application. The default value is `{CLIENT_SECRET}`. |
-`-f` or `--framework` | Defines the target framework to use for the .NET project. The possible values are `netcoreapp3.1` and `net5.0`. The default value is `netcoreapp3.1`. |
+- `-d` or `--domain`
+  The Auth0 domain associated with your tenant. The default value is `{DOMAIN}`.
+- `-c` or `--clientId`
+  The client id associated with your application. The default value is `{CLIENT_ID}`.
+- `-cl` or `--clientSecret`
+  The secret associated with your application. The default value is `{CLIENT_SECRET}`.
+- `-f` or `--framework`
+  Defines the target framework to use for the .NET project. The possible values are `netcoreapp3.1` and `net5.0`. The default value is `netcoreapp3.1`.
+
+
 
 #### Using Visual Studio
 
@@ -88,12 +92,16 @@ dotnet new auth0webapi [options]
 
 This will create a new Web API application in the current folder. The following template-specific options are available:
 
-Option | Description |
----------|----------|---------
-`-d` or `--domain` | The Auth0 domain associated with your tenant. The default value is `{DOMAIN}`. |
-`-ap` or `--apiId` | The API identifier as defined in your Auth0 dashboard. The default value is `{ASPI_IDENTIFIER}` |
-`-f` or `--framework` | Defines the target framework to use for the .NET project. The possible values are `netcoreapp3.1` and `net5.0`. The default value is `netcoreapp3.1`. |
-`-`no or `--noOpenAPI` | It prevents OpenAPI documentation generation (`true`). The default value is `false`. |
+- `-d` or `--domain`
+  The Auth0 domain associated with your tenant. The default value is `{DOMAIN}`.
+- `-ap` or `--apiId`
+  The API identifier as defined in your Auth0 dashboard. The default value is `{ASPI_IDENTIFIER}`
+- `-f` or `--framework`
+  Defines the target framework to use for the .NET project. The possible values are `netcoreapp3.1` and `net5.0`. The default value is `netcoreapp3.1`.
+- `-`no or `--noOpenAPI`
+  It prevents OpenAPI documentation generation (`true`). The default value is `false`.
+
+
 
 #### Using Visual Studio
 
