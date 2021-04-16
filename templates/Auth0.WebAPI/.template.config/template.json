@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Andrea Chiarelli",
+  "classifications": [ "Web", "WebAPI", "Auth0" ],
+  "groupIdentity": "Auth0.NET.WebAPI",
+  "identity": "Auth0.NET.WebAPI.CSharp",
+  "name": "Auth0 ASP.NET Core Web API",
+  "description": "A project template for creating an ASP.NET Core application with an example Controllers implementing an HTTP API and integrated with Auth0 services.",
+  "shortName": "auth0webapi",
+  "sourceName": "Auth0.WebAPI",
+  "defaultName": "WebAPIApplication1",
+  "preferNameDirectory": true,
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols":{
+    "domain": {
+        "type": "parameter",
+        "description": "Your Auth0 domain.",
+        "defaultValue": "{DOMAIN}",
+        "replaces":"{DOMAIN}"
+    },
+    "apiId": {
+        "type": "parameter",
+        "description": "Your API identifier.",
+        "defaultValue": "{API_IDENTIFIER}",
+        "replaces":"{API_IDENTIFIER}"
+    },
+    "TargetFrameworkOverride": {
+      "type": "parameter",
+      "description": "Overrides the target framework",
+      "replaces": "TargetFrameworkOverride",
+      "datatype": "string",
+      "defaultValue": ""
+    },
+    "Framework": {
+      "type": "parameter",
+      "description": "The target framework for the project.",
+      "datatype": "choice",
+      "choices": [
+        {
+            "choice": "netcoreapp3.1",
+            "description": "Target .NET Core 3.1"
+        },
+        {
+          "choice": "net5.0",
+          "description": "Target .NET 5"
+        }
+      ],
+      "defaultValue": "netcoreapp3.1",
+      "replaces": "netcoreapp3.1"
+    },
+    "noOpenapi": {
+      "type": "parameter",
+      "dataType":"bool",
+      "defaultValue": "false"
+    }
+  },
+  "sources": [
+    {
+        "modifiers": [
+            {
+                "condition": "(noOpenapi)",
+                "exclude": [ "Swagger/**/*" ]
+            }
+        ]
+    }
+]
+}
