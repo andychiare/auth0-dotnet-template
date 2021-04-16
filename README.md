@@ -57,13 +57,13 @@ dotnet new auth0mvc [options]
 
 This will create a new MVC application in the current folder. The following template-specific options are available:
 
-- `-d` or `--domain`
+- `-d` or `--domain`<br>
   The Auth0 domain associated with your tenant. The default value is `{DOMAIN}`.
-- `-c` or `--clientId`
+- `-c` or `--clientId`<br>
   The client id associated with your application. The default value is `{CLIENT_ID}`.
-- `-cl` or `--clientSecret`
+- `-cl` or `--clientSecret`<br>
   The secret associated with your application. The default value is `{CLIENT_SECRET}`.
-- `-f` or `--framework`
+- `-f` or `--framework`<br>
   Defines the target framework to use for the .NET project. The possible values are `netcoreapp3.1` and `net5.0`. The default value is `netcoreapp3.1`.
 
 
@@ -92,13 +92,13 @@ dotnet new auth0webapi [options]
 
 This will create a new Web API application in the current folder. The following template-specific options are available:
 
-- `-d` or `--domain`
+- `-d` or `--domain`<br>
   The Auth0 domain associated with your tenant. The default value is `{DOMAIN}`.
-- `-ap` or `--apiId`
+- `-ap` or `--apiId`<br>
   The API identifier as defined in your Auth0 dashboard. The default value is `{ASPI_IDENTIFIER}`
-- `-f` or `--framework`
+- `-f` or `--framework`<br>
   Defines the target framework to use for the .NET project. The possible values are `netcoreapp3.1` and `net5.0`. The default value is `netcoreapp3.1`.
-- `-`no or `--noOpenAPI`
+- `-`no or `--noOpenAPI`<br>
   It prevents OpenAPI documentation generation (`true`). The default value is `false`.
 
 
