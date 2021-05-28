@@ -4,7 +4,7 @@
   "classifications": [ "Web", "MVC", "Razor Pages", "Auth0" ],
   "groupIdentity": "Auth0.NET.Mvc",
   "identity": "Auth0.NET.Mvc.CSharp",
-  "name": "Auth0 ASP.NET Core App",
+  "name": "Auth0 ASP.NET Core Web App",
   "description": "A project template for creating an ASP.NET Core application with MVC Views and Controllers and integrated with Auth0 services.",
   "shortName": "auth0webapp",
   "sourceName": "Auth0.Mvc",
@@ -17,28 +17,24 @@
   "symbols":{
     "domain": {
         "type": "parameter",
+        "datatype": "string",
         "description": "Your Auth0 domain.",
-        "defaultValue": "{DOMAIN}",
+        "defaultValue": "yourdomain.auth0.com",
         "replaces":"{DOMAIN}"
     },
     "clientId": {
         "type": "parameter",
+        "datatype": "string",
         "description": "Your Auth0 client id.",
-        "defaultValue": "{CLIENT_ID}",
+        "defaultValue": "your-client-id",
         "replaces":"{CLIENT_ID}"
     },
     "clientSecret": {
       "type": "parameter",
-      "description": "Your Auth0 client secret.",
-      "defaultValue": "{CLIENT_SECRET}",
-      "replaces":"{CLIENT_SECRET}"
-    },
-    "TargetFrameworkOverride": {
-      "type": "parameter",
-      "description": "Overrides the target framework",
-      "replaces": "TargetFrameworkOverride",
       "datatype": "string",
-      "defaultValue": ""
+      "description": "Your Auth0 client secret.",
+      "defaultValue": "your-client-secret",
+      "replaces":"{CLIENT_SECRET}"
     },
     "Framework": {
       "type": "parameter",
@@ -46,16 +42,16 @@
       "datatype": "choice",
       "choices": [
         {
-            "choice": "netcoreapp3.1",
-            "description": "Target .NET Core 3.1"
+          "choice": "net5.0",
+          "description": "Target net5.0"
         },
         {
-          "choice": "net5.0",
-          "description": "Target .NET 5"
+          "choice": "netcoreapp3.1",
+          "description": "Target netcoreapp3.1"
         }
       ],
-      "defaultValue": "netcoreapp3.1",
-      "replaces": "netcoreapp3.1"
+      "defaultValue": "net5.0",
+      "replaces": "net5.0"
     }
   }
 }

@@ -17,11 +17,12 @@
       "isVisible": "true"
     },
     {
-      "id": "noOpenapi",
+      "id": "EnableOpenAPI",
       "name": {
-        "text": "Disable OpenAPI support"
+        "text": "Enable OpenAPI support"
       },
-      "isVisible": "true"
+      "isVisible": true,
+      "defaultValue": true
     }
   ]
 }

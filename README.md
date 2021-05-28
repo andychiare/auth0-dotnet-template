@@ -52,19 +52,19 @@ For more information about creating and securing an ASP.NET MVC application with
 To create a new MVC application with the .NET CLI, you can run the following command:
 
 ```
-dotnet new auth0mvc [options]
+dotnet new auth0webapp [options]
 ```
 
 This will create a new MVC application in the current folder. The following template-specific options are available:
 
-- `-d` or `--domain`<br>
-  The Auth0 domain associated with your tenant. The default value is `{DOMAIN}`.
-- `-c` or `--clientId`<br>
-  The client id associated with your application. The default value is `{CLIENT_ID}`.
-- `-cl` or `--clientSecret`<br>
-  The secret associated with your application. The default value is `{CLIENT_SECRET}`.
+- `--domain`<br>
+  The Auth0 domain associated with your tenant. The default value is `yourdomain.auth0.com`.
+- `--client-id`<br>
+  The client id associated with your application. The default value is `your-client-id`.
+- `--client-secret`<br>
+  The secret associated with your application. The default value is `your-client-secret`.
 - `-f` or `--framework`<br>
-  Defines the target framework to use for the .NET project. The possible values are `netcoreapp3.1` and `net5.0`. The default value is `netcoreapp3.1`.
+  Defines the target framework to use for the .NET project. The possible values are `netcoreapp3.1` and `net5.0`. The default value is `net5.0`.
 
 
 
@@ -116,3 +116,4 @@ Then, provide the required options:
 ## License
 
 This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for more info.
+

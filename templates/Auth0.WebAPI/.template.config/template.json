@@ -17,22 +17,17 @@
   "symbols":{
     "domain": {
         "type": "parameter",
+        "datatype": "string",
         "description": "Your Auth0 domain.",
-        "defaultValue": "{DOMAIN}",
+        "defaultValue": "yourdomain.auth0.com",
         "replaces":"{DOMAIN}"
     },
     "apiId": {
         "type": "parameter",
+        "datatype": "string",
         "description": "Your API identifier.",
-        "defaultValue": "{API_IDENTIFIER}",
+        "defaultValue": "https://your-api-id.com",
         "replaces":"{API_IDENTIFIER}"
-    },
-    "TargetFrameworkOverride": {
-      "type": "parameter",
-      "description": "Overrides the target framework",
-      "replaces": "TargetFrameworkOverride",
-      "datatype": "string",
-      "defaultValue": ""
     },
     "Framework": {
       "type": "parameter",
@@ -40,28 +35,39 @@
       "datatype": "choice",
       "choices": [
         {
-            "choice": "netcoreapp3.1",
-            "description": "Target .NET Core 3.1"
-        },
-        {
           "choice": "net5.0",
           "description": "Target .NET 5"
+        },
+        {
+          "choice": "netcoreapp3.1",
+          "description": "Target .NET Core 3.1"
         }
       ],
-      "defaultValue": "netcoreapp3.1",
-      "replaces": "netcoreapp3.1"
+      "defaultValue": "net5.0",
+      "replaces": "net5.0"
     },
-    "noOpenapi": {
+    "DisableOpenAPI": {
       "type": "parameter",
       "dataType":"bool",
-      "defaultValue": "false"
+      "defaultValue": "false",
+      "description": "Disable OpenAPI (Swagger) support"
+    },
+    "EnableOpenAPI": {
+      "type": "parameter",
+      "dataType":"bool",
+      "defaultValue": "true",
+      "description": "Enable OpenAPI (Swagger) support"
+    },
+    "removeOpenAPI": {
+      "type": "computed",
+      "value": "(DisableOpenAPI || !EnableOpenAPI)"
     }
   },
   "sources": [
     {
         "modifiers": [
             {
-                "condition": "(noOpenapi)",
+                "condition": "(removeOpenAPI)",
                 "exclude": [ "Swagger/**/*" ]
             }
         ]
