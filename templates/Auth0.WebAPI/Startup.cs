@@ -1,4 +1,4 @@
-#if (!noOpenapi)
+#if (!removeOpenAPI)
 using Auth0.WebAPI.Swagger;
 #endif
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -31,7 +31,7 @@ namespace Auth0.WebAPI
 
             services.AddControllers();
 
-#if (!noOpenapi)
+#if (!removeOpenAPI)
             services.AddSwaggerGenerator();
 #endif
         }
@@ -42,7 +42,7 @@ namespace Auth0.WebAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-#if (!noOpenapi)
+#if (!removeOpenAPI)
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Auth0.WebAPI v1"));
 #endif
