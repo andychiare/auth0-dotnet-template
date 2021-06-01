@@ -40,6 +40,7 @@ Currently, the following .NET templates are implemented:
 
 - [Auth0 MVC Application](#Auth0-MVC-Application)
 - [Auth0 Web API Application](#Auth0-Web-API-Application)
+- [Auth0 Blazor Server Application](#Auth0-Blazor-Server-Application)
 
 
 
@@ -112,6 +113,43 @@ To create a new Web API application with Visual Studio, select the *Auth0 ASP.NE
 Then, provide the required options:
 
 ![Auth0 MVC Application options from Visual Studio](assets/auth0-webapi-app-vs-options.png)
+
+### Auth0 Blazor Server Application
+
+For more information about creating and securing a Blazor Server application with Auth0, check out the [Auth0 Blazor Server Tutorial](https://auth0.com/blog/what-is-blazor-tutorial-on-building-webapp-with-authentication).
+
+#### Using the .NET CLI
+
+To create a new Blazor Server application with the .NET CLI, you can run the following command:
+
+```
+dotnet new auth0blazorserver [options]
+```
+
+This will create a new Blazor Server application in the current folder. The following template-specific options are available:
+
+- `--domain`<br>
+  The Auth0 domain associated with your tenant. The default value is `yourdomain.auth0.com`.
+- `--client-id`<br>
+  The client id associated with your application. The default value is `your-client-id`.
+- `--client-secret`<br>
+  The secret associated with your application. The default value is `your-client-secret`.
+- `-f` or `--framework`<br>
+  Defines the target framework to use for the .NET project. The possible values are `netcoreapp3.1` and `net5.0`. The default value is `net5.0`.
+
+
+
+#### Using Visual Studio
+
+To create a new Blazor Server application with Visual Studio, select the *Auth0 Blazor Server App* from the *Web and Console* application group:
+
+![Auth0 Blazor Server Application from Visual Studio](assets/auth0-blazorserver-app-vs.png)
+
+Then, provide the required options:
+
+![Auth0 Blazor Server Application options from Visual Studio](assets/auth0-blazorserver-app-vs-options.png)
+
+
 
 ## License
 
