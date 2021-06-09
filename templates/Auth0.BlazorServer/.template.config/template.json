@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Andrea Chiarelli",
+  "classifications": [ "Web", "Blazor", "Auth0" ],
+  "groupIdentity": "Auth0.NET.BlazorServer",
+  "identity": "Auth0.NET.BlazorServer.CSharp",
+  "name": "Auth0 Blazor Server App",
+  "description": "A project template for creating a Blazor server integrated with Auth0 authentication and authorization services.",
+  "shortName": "auth0blazorserver",
+  "sourceName": "Auth0.BlazorServer",
+  "defaultName": "BlazorApplication1",
+  "preferNameDirectory": true,
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols":{
+    "domain": {
+        "type": "parameter",
+        "datatype": "string",
+        "description": "Your Auth0 domain.",
+        "defaultValue": "yourdomain.auth0.com",
+        "replaces":"{DOMAIN}"
+    },
+    "clientId": {
+        "type": "parameter",
+        "datatype": "string",
+        "description": "Your Auth0 client id.",
+        "defaultValue": "your-client-id",
+        "replaces":"{CLIENT_ID}"
+    },
+    "clientSecret": {
+      "type": "parameter",
+      "datatype": "string",
+      "description": "Your Auth0 client secret.",
+      "defaultValue": "your-client-secret",
+      "replaces":"{CLIENT_SECRET}"
+    },
+    "Framework": {
+      "type": "parameter",
+      "description": "The target framework for the project.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "net5.0",
+          "description": "Target net5.0"
+        },
+        {
+          "choice": "netcoreapp3.1",
+          "description": "Target netcoreapp3.1"
+        }
+      ],
+      "defaultValue": "net5.0",
+      "replaces": "net5.0"
+    }
+  }
+}
