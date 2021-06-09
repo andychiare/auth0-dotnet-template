@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Andrea Chiarelli",
+  "classifications": [ "Web", "Blazor", "WebAssembly", "Auth0" ],
+  "groupIdentity": "Auth0.NET.BlazorWebAssembly",
+  "identity": "Auth0.NET.BlazorWebAssembly.CSharp",
+  "name": "Auth0 Blazor WebAssembly App",
+  "description": "A project template for creating a Blazor WebAssembly app hosted by an ASP.NET Core app and integrated with Auth0 authentication and authorization services.",
+  "shortName": "auth0blazorwasm",
+  "sourceName": "Auth0.BlazorWebAssembly",
+  "defaultName": "BlazorApplication1",
+  "preferNameDirectory": true,
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols":{
+    "domain": {
+        "type": "parameter",
+        "datatype": "string",
+        "description": "Your Auth0 domain.",
+        "defaultValue": "yourdomain.auth0.com",
+        "replaces":"{DOMAIN}"
+    },
+    "clientId": {
+        "type": "parameter",
+        "datatype": "string",
+        "description": "Your Auth0 client id.",
+        "defaultValue": "your-client-id",
+        "replaces":"{CLIENT_ID}"
+    },
+    "apiId": {
+      "type": "parameter",
+      "datatype": "string",
+      "description": "Your API identifier.",
+      "defaultValue": "https://your-api-id.com",
+      "replaces":"{API_IDENTIFIER}"
+    },
+    "Framework": {
+      "type": "parameter",
+      "description": "The target framework for the project.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "net5.0",
+          "description": "Target net5.0"
+        },
+        {
+          "choice": "netcoreapp3.1",
+          "description": "Target netcoreapp3.1"
+        }
+      ],
+      "defaultValue": "net5.0",
+      "replaces": "net5.0"
+    }
+  }
+}

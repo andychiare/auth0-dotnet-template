@@ -34,6 +34,16 @@ To work locally with the Auth0 Templates, i.e., using the templates coming from 
 
 > :warning: **NOTE**: Currently, to make project templates available also for Visual Studio, you need to apply some additional configuration steps. Please, [take a look at this blog post](https://devblogs.microsoft.com/dotnet/net-cli-templates-in-visual-studio/).
 
+
+
+:information_source: If you have Node.js installed on your machine, you can create and install a local NuGet package by using the following command in the root folder of the project:
+
+```bash
+npm run reinstall
+```
+
+That command also works for updating a current installed package.
+
 ## Usage
 
 Currently, the following .NET templates are implemented:
@@ -41,6 +51,7 @@ Currently, the following .NET templates are implemented:
 - [Auth0 MVC Application](#Auth0-MVC-Application)
 - [Auth0 Web API Application](#Auth0-Web-API-Application)
 - [Auth0 Blazor Server Application](#Auth0-Blazor-Server-Application)
+- [Auth0 Blazor WebAssembly Application](#Auth0-Blazor-WebAssembly-Application)
 
 
 
@@ -93,13 +104,13 @@ dotnet new auth0webapi [options]
 
 This will create a new Web API application in the current folder. The following template-specific options are available:
 
-- `-d` or `--domain`<br>
-  The Auth0 domain associated with your tenant. The default value is `{DOMAIN}`.
-- `-ap` or `--apiId`<br>
-  The API identifier as defined in your Auth0 dashboard. The default value is `{ASPI_IDENTIFIER}`
+- `--domain`<br>
+  The Auth0 domain associated with your tenant. The default value is `yourdomain.auth0.com`.
+- `--api-id`<br>
+  The API identifier as defined in your Auth0 dashboard. The default value is `https://your-api-id.com`
 - `-f` or `--framework`<br>
-  Defines the target framework to use for the .NET project. The possible values are `netcoreapp3.1` and `net5.0`. The default value is `netcoreapp3.1`.
-- `-`no or `--noOpenAPI`<br>
+  Defines the target framework to use for the .NET project. The possible values are `netcoreapp3.1` and `net5.0`. The default value is `net5.0`.
+- `--no-openaPI`<br>
   It prevents OpenAPI documentation generation (`true`). The default value is `false`.
 
 
@@ -148,6 +159,41 @@ To create a new Blazor Server application with Visual Studio, select the *Auth0 
 Then, provide the required options:
 
 ![Auth0 Blazor Server Application options from Visual Studio](assets/auth0-blazorserver-app-vs-options.png)
+
+### Auth0 Blazor WebAssembly Application
+
+For more information about creating and securing a Blazor WebAssembly application with Auth0, check out the [Auth0 Blazor WebAssembly Tutorial](https://auth0.com/blog/securing-blazor-webassembly-apps/).
+
+#### Using the .NET CLI
+
+To create a new Blazor WebAssembly ([ASP.NET Core  hosted](https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models)) application with the .NET CLI, you can run the following command:
+
+```
+dotnet new auth0blazorwasm [options]
+```
+
+This will create a new Blazor WebAssembly application in the current folder. The following template-specific options are available:
+
+- `--domain`<br>
+  The Auth0 domain associated with your tenant. The default value is `yourdomain.auth0.com`.
+- `--client-id`<br>
+  The client id associated with your application. The default value is `your-client-id`.
+- `--api-id`<br>
+  The API identifier as defined in your Auth0 dashboard. The default value is `https://your-api-id.com`.
+- `-f` or `--framework`<br>
+  Defines the target framework to use for the .NET project. The possible values are `netcoreapp3.1` and `net5.0`. The default value is `net5.0`.
+
+
+
+#### Using Visual Studio
+
+To create a new Blazor WebAssembly application with Visual Studio, select the *Auth0 Blazor WebAssembly App* from the *Web and Console* application group:
+
+![Auth0 Blazor Server Application from Visual Studio](assets/auth0-blazorwasm-app-vs.png)
+
+Then, provide the required options:
+
+![Auth0 Blazor Server Application options from Visual Studio](assets/auth0-blazorwasm-app-vs-options.png)
 
 
 
