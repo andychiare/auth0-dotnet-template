@@ -39,10 +39,10 @@ To work locally with the Auth0 Templates, i.e., using the templates coming from 
 :information_source: If you have Node.js installed on your machine, you can create and install a local NuGet package by using the following command in the root folder of the project:
 
 ```bash
-npm run reinstall
+npm run pack-install
 ```
 
-That command also works for updating a current installed package.
+That command also works for updating a currently installed package.
 
 ## Usage
 
@@ -55,7 +55,7 @@ Currently, the following .NET templates are implemented:
 
 
 
-### Auth0 MVC Application
+## Auth0 MVC Application
 
 For more information about creating and securing an ASP.NET MVC application with Auth0, check out the [Auth0 ASP.NET MVC Quickstart](https://auth0.com/docs/quickstart/webapp/aspnet-core/01-login).
 
@@ -90,7 +90,7 @@ Then, provide the required options:
 
 ![Auth0 MVC Application options from Visual Studio](assets/auth0-mvc-app-vs-options.png)
 
-### Auth0 Web API Application
+## Auth0 Web API Application
 
 For more information about creating and securing an ASP.NET Web API application with Auth0, check out the [Auth0 ASP.NET Web API Quickstart](https://auth0.com/docs/quickstart/backend/aspnet-core-webapi).
 
@@ -125,7 +125,7 @@ Then, provide the required options:
 
 ![Auth0 MVC Application options from Visual Studio](assets/auth0-webapi-app-vs-options.png)
 
-### Auth0 Blazor Server Application
+## Auth0 Blazor Server Application
 
 For more information about creating and securing a Blazor Server application with Auth0, check out the [Auth0 Blazor Server Tutorial](https://auth0.com/blog/what-is-blazor-tutorial-on-building-webapp-with-authentication).
 
@@ -160,7 +160,7 @@ Then, provide the required options:
 
 ![Auth0 Blazor Server Application options from Visual Studio](assets/auth0-blazorserver-app-vs-options.png)
 
-### Auth0 Blazor WebAssembly Application
+## Auth0 Blazor WebAssembly Application
 
 For more information about creating and securing a Blazor WebAssembly application with Auth0, check out the [Auth0 Blazor WebAssembly Tutorial](https://auth0.com/blog/securing-blazor-webassembly-apps/).
 
