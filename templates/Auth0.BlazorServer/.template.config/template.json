@@ -29,13 +29,6 @@
         "defaultValue": "your-client-id",
         "replaces":"{CLIENT_ID}"
     },
-    "clientSecret": {
-      "type": "parameter",
-      "datatype": "string",
-      "description": "Your Auth0 client secret.",
-      "defaultValue": "your-client-secret",
-      "replaces":"{CLIENT_SECRET}"
-    },
     "Framework": {
       "type": "parameter",
       "description": "The target framework for the project.",

@@ -9,7 +9,7 @@ using Auth0.BlazorServer.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Auth0.BlazorServer.Authentication;
+using Auth0.AspNetCore.Mvc;
 
 namespace Auth0.BlazorServer
 {
@@ -36,19 +36,12 @@ namespace Auth0.BlazorServer
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddAuthentication(options =>
+            services.AddAuth0WebAppAuthentication(options =>
             {
-                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-            }).AddCookie()
-            .AddAuth0(options => {
                 options.Domain = Configuration["Auth0:Domain"];
                 options.ClientId = Configuration["Auth0:ClientId"];
-                options.ClientSecret = Configuration["Auth0:ClientSecret"];
             });
 
-            //services.AddHttpContextAccessor();
             services.AddSingleton<WeatherForecastService>();
         }
 
