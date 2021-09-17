@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Auth0.AspNetCore.Mvc;
+using Auth0.AspNetCore.Authentication;
 
 namespace Auth0.BlazorServer.Pages
 {

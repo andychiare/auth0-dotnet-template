@@ -9,7 +9,7 @@ using Auth0.BlazorServer.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Auth0.AspNetCore.Mvc;
+using Auth0.AspNetCore.Authentication;
 
 namespace Auth0.BlazorServer
 {
