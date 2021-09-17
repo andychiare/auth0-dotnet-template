@@ -7,7 +7,7 @@
   <PropertyGroup />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Auth0.NET' " />
   <ItemGroup>
-    <PackageReference Include="Auth0.AspNetCore.Mvc" Version="1.0.0-beta.0" />
+    <PackageReference Include="Auth0.AspNetCore.Authentication" Version="1.0.0-beta.1" />
   </ItemGroup>
 
   <ItemGroup>
