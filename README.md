@@ -73,8 +73,6 @@ This will create a new MVC application in the current folder. The following temp
   The Auth0 domain associated with your tenant. The default value is `yourdomain.auth0.com`.
 - `--client-id`<br>
   The client id associated with your application. The default value is `your-client-id`.
-- `--client-secret`<br>
-  The secret associated with your application. The default value is `your-client-secret`.
 - `-f` or `--framework`<br>
   Defines the target framework to use for the .NET project. The possible values are `netcoreapp3.1` and `net5.0`. The default value is `net5.0`.
 
