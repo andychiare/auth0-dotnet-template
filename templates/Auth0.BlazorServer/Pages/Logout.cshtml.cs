@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Auth0.AspNetCore.Authentication;
 
 namespace Auth0.BlazorServer.Pages
 {
@@ -9,7 +10,14 @@ namespace Auth0.BlazorServer.Pages
     {
         public async Task OnGet()
         {
-            await HttpContext.SignOutAsync("Auth0", new AuthenticationProperties { RedirectUri = "/" });
+            var authenticationProperties = new LogoutAuthenticationPropertiesBuilder()
+                // Indicate here where Auth0 should redirect the user after a logout.
+                // Note that the resulting absolute Uri must be added in the
+                // **Allowed Logout URLs** settings for the client.
+                .WithRedirectUri("/")
+                .Build();
+
+            await HttpContext.SignOutAsync(Auth0Constants.AuthenticationScheme, authenticationProperties);
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         }
     }
