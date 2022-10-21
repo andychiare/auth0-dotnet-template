@@ -1,11 +1,9 @@
-
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Auth0.Mvc.Authentication;
+using Auth0.AspNetCore.Authentication;
 
 namespace Auth0.Mvc
 {
@@ -21,16 +19,11 @@ namespace Auth0.Mvc
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAuthentication(options =>
+            services.AddAuth0WebAppAuthentication(options =>
             {
-                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-            }).AddCookie()
-            .AddAuth0(options => {
                 options.Domain = Configuration["Auth0:Domain"];
                 options.ClientId = Configuration["Auth0:ClientId"];
-                options.ClientSecret = Configuration["Auth0:ClientSecret"];
+                options.Scope = "openid profile email";
             });
 
             services.AddControllersWithViews();

@@ -15,13 +15,6 @@
         "text": "Auth0 Client Id"
       },
       "isVisible": "true"
-    },
-    {
-      "id": "clientSecret",
-      "name": {
-        "text": "Auth0 Client Secret"
-      },
-      "isVisible": "true"
     }
   ]
 }
