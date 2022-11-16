@@ -1,10 +1,29 @@
-@page "/"
+﻿@page "/"
+@inject AuthenticationStateProvider AuthState
+@attribute [Authorize]
 
-<h1>Hello, world!</h1>
+<PageTitle>Auth0 Blazor Server</PageTitle>
 
-Welcome to your new app.
+<h1>Welcome, @Username!</h1>
+You can only see this content if you're authenticated.
+<br />
+<img src="@Picture">
 
-<div>
-  To learn more about securing Blazor Server applications with <a href="https://auth0.com">Auth0</a>, check out&nbsp;<a href="https://auth0.com/blog/what-is-blazor-tutorial-on-building-webapp-with-authentication">this article</a>.
-</div>
+@code { 
+  private string Username = "Anonymous User";
+  private string Picture = "";
 
+  protected override async Task OnInitializedAsync()
+  {
+    var state = await AuthState.GetAuthenticationStateAsync();
+
+    Username = state.User.Identity.Name?? string.Empty;
+
+    Picture = state.User.Claims
+                .Where(c => c.Type.Equals("picture"))
+                .Select(c => c.Value)
+                .FirstOrDefault() ?? string.Empty;
+
+    await base.OnInitializedAsync();
+  }
+}

@@ -7,7 +7,7 @@
   "name": "Auth0 Blazor Server App",
   "description": "A project template for creating a Blazor server integrated with Auth0 authentication and authorization services.",
   "shortName": "auth0blazorserver",
-  "sourceName": "Auth0.BlazorServer",
+  "sourceName": "Auth0BlazorServer",
   "defaultName": "BlazorApplication1",
   "preferNameDirectory": true,
   "tags": {
@@ -35,16 +35,16 @@
       "datatype": "choice",
       "choices": [
         {
-          "choice": "net5.0",
-          "description": "Target net5.0"
+          "choice": "net6.0",
+          "description": "Target .NET 6"
         },
         {
-          "choice": "netcoreapp3.1",
-          "description": "Target netcoreapp3.1"
+          "choice": "net7.0",
+          "description": "Target .NET 7"
         }
       ],
-      "defaultValue": "net5.0",
-      "replaces": "net5.0"
+      "defaultValue": "net6.0",
+      "replaces": "net6.0"
     }
   }
 }

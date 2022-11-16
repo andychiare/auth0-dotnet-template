@@ -1,24 +1,20 @@
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Authentication;
 using Auth0.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
-namespace Auth0.BlazorServer.Pages
+namespace Auth0BlazorServer.Pages;
+public class LogoutModel : PageModel
 {
-    public class LogoutModel : PageModel
-    {
-        public async Task OnGet()
-        {
-            var authenticationProperties = new LogoutAuthenticationPropertiesBuilder()
-                // Indicate here where Auth0 should redirect the user after a logout.
-                // Note that the resulting absolute Uri must be added in the
-                // **Allowed Logout URLs** settings for the client.
-                .WithRedirectUri("/")
-                .Build();
+  [Authorize]
+  public async Task OnGet()
+  {
+    var authenticationProperties = new LogoutAuthenticationPropertiesBuilder()
+         .WithRedirectUri("/")
+         .Build();
 
-            await HttpContext.SignOutAsync(Auth0Constants.AuthenticationScheme, authenticationProperties);
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-        }
-    }
+    await HttpContext.SignOutAsync(Auth0Constants.AuthenticationScheme, authenticationProperties);
+    await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+  }
 }

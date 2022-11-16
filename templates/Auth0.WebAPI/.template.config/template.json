@@ -5,9 +5,9 @@
   "groupIdentity": "Auth0.NET.WebAPI",
   "identity": "Auth0.NET.WebAPI.CSharp",
   "name": "Auth0 ASP.NET Core Web API",
-  "description": "A project template for creating an ASP.NET Core application with an example Controllers implementing an HTTP API and integrated with Auth0 services.",
+  "description": "A project template for creating an ASP.NET Core application with a sample Controller implementing an HTTP API and integrated with Auth0 services.",
   "shortName": "auth0webapi",
-  "sourceName": "Auth0.WebAPI",
+  "sourceName": "Auth0WebAPI",
   "defaultName": "WebAPIApplication1",
   "preferNameDirectory": true,
   "tags": {
@@ -35,16 +35,16 @@
       "datatype": "choice",
       "choices": [
         {
-          "choice": "net5.0",
-          "description": "Target .NET 5"
+          "choice": "net6.0",
+          "description": "Target .NET 6"
         },
         {
-          "choice": "netcoreapp3.1",
-          "description": "Target .NET Core 3.1"
+          "choice": "net7.0",
+          "description": "Target .NET 7"
         }
       ],
-      "defaultValue": "net5.0",
-      "replaces": "net5.0"
+      "defaultValue": "net6.0",
+      "replaces": "net6.0"
     },
     "DisableOpenAPI": {
       "type": "parameter",
