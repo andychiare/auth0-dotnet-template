@@ -6,7 +6,7 @@ The Auth0 Templates for .NET package allows you to quickly bootstrap a .NET appl
 ### Requirements
 
 * An Auth0 account. You can [sign up for a free one](https://auth0.com/signup) right now.
-* .NET Core 3.1 SDK or higher.
+* .NET Core 7.0 SDK or higher.
 
 ### Installation
 

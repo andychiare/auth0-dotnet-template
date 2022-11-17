@@ -4,8 +4,8 @@
   "version": "1.0.0", 
   "scripts": {
     "create": "dotnet pack",
-    "uninstall": "dotnet new -u Auth0.Templates",
-    "install": "dotnet new -i ./bin/Debug/Auth0.Templates.2.0.0-alpha.nupkg",
+    "uninstall": "dotnet new uninstall Auth0.Templates",
+    "install": "dotnet new install ./bin/Debug/Auth0.Templates.2.0.0-alpha.nupkg",
     "pack-install": "npm run uninstall && npm run create && npm run install"
   }
 }
