@@ -141,5 +141,10 @@
       },
       "replaces": "44300"
     }
-  }
+  },
+  "primaryOutputs": [
+    {
+      "path": "Auth0BlazorWasm.sln"
+    }
+  ]
 }
