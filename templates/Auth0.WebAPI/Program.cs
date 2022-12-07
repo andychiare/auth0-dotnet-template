@@ -5,17 +5,7 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-     .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
-     {
-       options.Authority = $"https://{builder.Configuration["Auth0:Domain"]}";
-       options.TokenValidationParameters =
-         new Microsoft.IdentityModel.Tokens.TokenValidationParameters
-         {
-           ValidAudience = builder.Configuration["Auth0:Audience"],
-           ValidIssuer = $"{builder.Configuration["Auth0:Domain"]}"
-         };
-     });
+builder.Services.AddAuthentication().AddJwtBearer();
 
 builder.Services.AddControllers();
 #if (!removeOpenAPI)
@@ -33,9 +23,6 @@ if (app.Environment.IsDevelopment())
 #endif
 
 app.UseHttpsRedirection();
-
-app.UseAuthentication();
-app.UseAuthorization();
 
 app.MapControllers();
 
