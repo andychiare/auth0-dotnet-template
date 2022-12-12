@@ -5,8 +5,8 @@
       "longName": "client-id",
       "shortName": ""
     },
-    "apiId": {
-      "longName": "api-id",
+    "audience": {
+      "longName": "audience",
       "shortName": ""
     },
     "domain": {

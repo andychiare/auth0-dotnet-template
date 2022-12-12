@@ -10,9 +10,9 @@
       "isVisible": "true"
     },
     {
-      "id": "apiId",
+      "id": "audience",
       "name": {
-        "text": "API identifier"
+        "text": "API identifier (Audience)"
       },
       "isVisible": "true"
     },

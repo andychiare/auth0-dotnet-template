@@ -14,8 +14,8 @@ This will create a new Web API application in the current folder. The following 
 
 - `--domain`<br>
   The Auth0 domain associated with your tenant. The default value is `yourdomain.auth0.com`.
-- `--api-id`<br>
-  The API identifier as defined in your Auth0 dashboard. The default value is `https://your-api-id.com`
+- `--audience`<br>
+  The API identifier (audience) as defined in your Auth0 dashboard. The default value is `https://your-api-id.com`
 - `-f` or `--framework`<br>
   Defines the target framework to use for the .NET project. Currently, the only possible value is `net7.0`, which is also the default value.
 - `--no-openaPI`<br>

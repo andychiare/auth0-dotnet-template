@@ -34,12 +34,12 @@
         "defaultValue": "your-client-id",
         "replaces":"{CLIENT_ID}"
     },
-    "apiId": {
+    "audience": {
       "type": "parameter",
       "datatype": "string",
-      "description": "Your API identifier.",
+      "description": "Your API identifier (Audience).",
       "defaultValue": "https://your-api-id.com",
-      "replaces":"{API_IDENTIFIER}"
+      "replaces":"{AUDIENCE}"
     },
     "Framework": {
       "type": "parameter",

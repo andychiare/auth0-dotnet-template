@@ -16,8 +16,8 @@ This will create a new Blazor WebAssembly application in the current folder. The
   The Auth0 domain associated with your tenant. The default value is `yourdomain.auth0.com`.
 - `--client-id`<br>
   The client id associated with your application. The default value is `your-client-id`.
-- `--api-id`<br>
-  The API identifier as defined in your Auth0 dashboard. The default value is `https://your-api-id.com`.
+- `--audience`<br>
+  The API identifier (audience) as defined in your Auth0 dashboard. The default value is `https://your-api-id.com`.
 - `-f` or `--framework`<br>
   Defines the target framework to use for the .NET project. Currently, the only possible value is `net7.0`, which is also the default value.
 

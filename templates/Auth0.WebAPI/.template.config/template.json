@@ -22,12 +22,12 @@
         "defaultValue": "yourdomain.auth0.com",
         "replaces":"{DOMAIN}"
     },
-    "apiId": {
+    "audience": {
         "type": "parameter",
         "datatype": "string",
-        "description": "Your API identifier.",
+        "description": "Your API identifier (Audience).",
         "defaultValue": "https://your-api-id.com",
-        "replaces":"{API_IDENTIFIER}"
+        "replaces":"{AUDIENCE}"
     },
     "Framework": {
       "type": "parameter",
