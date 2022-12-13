@@ -1,30 +1,33 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using System.Globalization;
+using Auth0Mvc.Models;
+using Microsoft.AspNetCore.Authorization;
 
-namespace Auth0.Mvc.Controllers
+namespace Auth0Mvc.Controllers;
+
+public class HomeController : Controller
 {
-    public class HomeController : Controller
+    private readonly ILogger<HomeController> _logger;
+
+    public HomeController(ILogger<HomeController> logger)
     {
-        public async Task<IActionResult> Index()
-        {
-            // If the user is authenticated, then this is how you can get the access_token and id_token
-            if (User.Identity.IsAuthenticated)
-            {
-                string idToken = await HttpContext.GetTokenAsync("id_token");
+        _logger = logger;
+    }
 
-                // Now you can use them. For more info on when and how to use the
-                // id_token, see https://auth0.com/docs/tokens
-            }
+    public IActionResult Index()
+    {
+        return View();
+    }
 
-            return View();
-        }
+    [Authorize]
+    public IActionResult Privacy()
+    {
+        return View();
+    }
 
-        public IActionResult Error()
-        {
-            return View();
-        }
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public IActionResult Error()
+    {
+        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }

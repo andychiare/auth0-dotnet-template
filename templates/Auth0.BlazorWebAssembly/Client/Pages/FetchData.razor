@@ -1,8 +1,11 @@
 ﻿@page "/fetchdata"
 @attribute [Authorize]
-@using Auth0.BlazorWebAssembly.Shared
+
+@using Auth0BlazorWasm.Shared
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
 @inject HttpClient Http
+
+<PageTitle>Weather forecast</PageTitle>
 
 <h1>Weather forecast</h1>
 
@@ -38,18 +41,17 @@ else
 }
 
 @code {
-    private WeatherForecast[] forecasts;
+    private WeatherForecast[]? forecasts;
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
-            forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast");
+            forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("weatherforecast");
         }
         catch (AccessTokenNotAvailableException exception)
         {
             exception.Redirect();
         }
     }
-
 }

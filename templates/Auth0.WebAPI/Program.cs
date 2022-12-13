@@ -1,20 +1,29 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+#if (!removeOpenAPI)
+using Microsoft.OpenApi.Models;
+#endif
 
-namespace Auth0.WebAPI
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAuthentication().AddJwtBearer();
+
+builder.Services.AddControllers();
+#if (!removeOpenAPI)
+builder.Services.AddSwaggerService();
+#endif
+
+var app = builder.Build();
+
+#if (!removeOpenAPI)
+if (app.Environment.IsDevelopment())
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            CreateHostBuilder(args).Build().Run();
-        }
-
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
-    }
+  app.UseSwagger();
+  app.UseSwaggerUI();
 }
+#endif
+
+app.UseHttpsRedirection();
+
+app.MapControllers();
+
+app.Run();

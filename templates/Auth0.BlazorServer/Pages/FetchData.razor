@@ -1,7 +1,9 @@
 ﻿@page "/fetchdata"
 @attribute [Authorize]
 
-@using Auth0.BlazorServer.Data
+<PageTitle>Weather forecast</PageTitle>
+
+@using Auth0BlazorServer.Data
 @inject WeatherForecastService ForecastService
 
 <h1>Weather forecast</h1>
@@ -38,7 +40,7 @@ else
 }
 
 @code {
-    private WeatherForecast[] forecasts;
+    private WeatherForecast[]? forecasts;
 
     protected override async Task OnInitializedAsync()
     {

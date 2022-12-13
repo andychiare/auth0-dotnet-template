@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json.schemastore.org/vs-2017.3.host",
+  "$schema": "http://json.schemastore.org/ide.host",
   "icon": "auth0.png",
   "symbolInfo": [
     {
@@ -17,9 +17,9 @@
       "isVisible": "true"
     },
     {
-      "id": "apiId",
+      "id": "audience",
       "name": {
-        "text": "API identifier"
+        "text": "API identifier (Audience)"
       },
       "isVisible": "true"
     }
