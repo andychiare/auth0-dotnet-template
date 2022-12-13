@@ -33,7 +33,7 @@ public class AccountController : Controller
   {
     return View(new UserProfileViewModel()
     {
-      Name = User.Identity.Name,
+      Name = User.Identity?.Name,
       EmailAddress = User.FindFirst(c => c.Type == ClaimTypes.Email)?.Value,
       ProfileImage = User.FindFirst(c => c.Type == "picture")?.Value
     });
