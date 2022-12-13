@@ -8,7 +8,14 @@ public static class SwaggerExtensions
     services.AddEndpointsApiExplorer();
     services.AddSwaggerGen(options =>
     {
-      options.SwaggerDoc("v1", new OpenApiInfo { Title = "Auth0WebAPI", Version = "v1.0.0" });
+      options.SwaggerDoc("v1", new OpenApiInfo { 
+        Title = "Auth0WebAPI",
+        Description = "Learn how to protect your .NET applications with Auth0",
+        Contact = new OpenApiContact {
+          Name = ".NET Identity with Auth0",
+          Url = new Uri("https://auth0.com/resources/ebooks/net-identity-with-auth0?utm_source=auth0_dotnet_template&utm_medium=sc&utm_campaign=webapi_dotnet_ebook")
+        },
+        Version = "v1.0.0" });
 
       var securitySchema = new OpenApiSecurityScheme
       {
